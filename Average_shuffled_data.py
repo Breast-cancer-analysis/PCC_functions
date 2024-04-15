@@ -1,8 +1,9 @@
 import pickle
 
 # Specify the file path where the pickle files are located
-file_path = "C:\\Users\\david\\OneDrive\\Desktop\\Imperial College London\\Year 3\\Project\\Results\\"
-cell_line = ['468','453','Cal51','MCF10A','MCF10A_TGFB','SUM159','T47D','wm']
+file_path = "C:\\Users\\david\\OneDrive\\Desktop\\Imperial College London\\Year 3\\Project\\Results_2\\"
+#cell_line = ['231','453','468','BT474','Cal51','MCF10A','MCF10A_TGFB','SUM159','T47D','wm']
+cell_line = ['231','453','468','BT474','Cal51','MCF10A','MCF10A_TGFB','SUM159','T47D','wm']
 
 for line in cell_line:
     new_data = [0]*21
