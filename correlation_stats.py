@@ -13,10 +13,10 @@ def mean_confidence_interval(data, confidence=0.95):
     return mean, mean-ME_CI, mean+ME_CI
 
 # Specify the file path where the pickle files are located
-folder_path = "C:\\Users\\david\\OneDrive\\Desktop\\Imperial College London\\Year 3\\Project\\Results\\"
+folder_path = "C:\\Users\\david\\OneDrive\\Desktop\\Imperial College London\\Year 3\\Project\\Results_2\\"
 
 #cell_line = ['231','453','468','BT474','Cal51','MCF10A','MCF10A_TGFB','SUM159','T47D','wm']
-cell_line = ['231']
+cell_line = ['468']
     
 log_space_numbers = np.logspace(0, 2, num=21, base=10)
 bin_sizes = log_space_numbers.tolist()
@@ -35,7 +35,6 @@ for line in cell_line:
     file_list = sorted(file_list)
     for i in range(len(file_list)):
         file_list[i] = 'bin_width_' + str(file_list[i])
-    #print(file_list)
 
     CI_list = []
     corr_list_list = [[] for i in range(len(bin_sizes))]
@@ -65,7 +64,6 @@ for line in cell_line:
         corr_list_list[its] = corr_list
         CI_list.append(mean_confidence_interval(corr_list, 0.95))
         its = its + 1
-    #print(corr_list_list)
 
     # Calculate mean and CI for observed data
     mean_list = []
@@ -114,15 +112,12 @@ for line in cell_line:
     for i in range(len(bin_sizes)):
         t_stat, p_value = scipy.stats.ttest_ind(corr_list_list[i], shuffle_corr_list[i], equal_var='False')
         ttest_list.append(p_value)
-        #print(t_stat)
-        #print(p_value)
-    #print(ttest_list)
+
     for i in range(len(bin_sizes)):
         if ttest_list[i] < alpha:
             ttest_list[i] = 0
         else:
             ttest_list[i] = 1
-    print(ttest_list)
 
     # Plot observed data and CI
     plt.plot(bin_sizes, mean_list, color='black', marker='o', label='observed')
@@ -152,4 +147,3 @@ for line in cell_line:
 
     # Show graph without saving
     plt.show()
-
