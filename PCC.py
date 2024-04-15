@@ -16,8 +16,9 @@ shuffle_mode = True
 
 temp_mean_list = []
 mean_list_bin = []
-path_name = "C:\\Users\\david\\OneDrive\\Desktop\\Imperial College London\\Year 3\\Project\\Results\\"
-cell_line = ['468','453','Cal51','MCF10A','MCF10A_TGFB','SUM159','T47D','wm']
+path_name = "C:\\Users\\david\\OneDrive\\Desktop\\Imperial College London\\Year 3\\Project\\Results_2\\"
+#cell_line = ['231','453','468','BT474','Cal51','MCF10A','MCF10A_TGFB','SUM159','T47D','wm']
+cell_line = ['231','453','468','BT474','Cal51','MCF10A','MCF10A_TGFB','SUM159','T47D','wm']
 
 
 # cell_line = [231] # used to test the if the result is the same as Foust
